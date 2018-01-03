@@ -72,12 +72,12 @@ public class OTO_DAOImpl implements OTO_DAO {
 		//execute Query
 		ticketsList=query.list();
 		//process the Results
-		for(FlightTicket ticket:ticketsList){
-			System.out.println("Tickets---->"+ticket);
+			for(FlightTicket ticket:ticketsList){
+			System.out.println("Tickets---->"+ticket.getTicketNo()+" "+ticket.getFlightName()+" "+ticket.getFlightNo()+" "+ticket.getSeatNo()+" "+ticket.getSource()+" "+ticket.getDestination());
 			//get all childs of each parent
 			FlightPassanger flight=ticket.getPassanger();
 			//System.out.println(ticketsList.size());
-								System.out.println("Passanger--->"+flight);
+				System.out.println("Passanger--->"+flight.getPassangerId()+" "+flight.getPassangerName()+" "+flight.getAge()+" "+flight.getGender()+" "+flight.getCost());
 					
 			}//for
 	}//loadDataUsingticket() method
